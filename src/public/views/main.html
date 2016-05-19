@@ -1,0 +1,8 @@
+<form id="translate">
+    <input id="word" ng-model="word" type="text" autofocus />
+    <button ng-click="translate(word)" type="submit" >Translate!</button>
+</form>
+
+<ul>
+   <li ng-repeat="translation in translations track by $index">{{translation}}</li>
+</ul>
