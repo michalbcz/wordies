@@ -11,7 +11,7 @@ var app = express();
 
 app.use('/', express.static(__dirname + '/public'));
 
-app.get('/api/translate/:word', function(req, res) {
+app.post('/api/translate/:word', function(req, res) {
 
     console.trace("word to translate: ", req.params.word);
     console.trace("request body: ", req.body)

@@ -1,6 +1,4 @@
 app.controller("TranslateController", ["$scope", "$http", "$log", function($scope,  $http, $log) {
-    $log.debug("translate controller");
-
     $scope.translations = []
 
     $scope.translate = function(word) {

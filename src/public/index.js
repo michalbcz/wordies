@@ -17,6 +17,23 @@ app.config(["$routeProvider", function($routeProvider) {
 
 }]);
 
+app.directive('focus', function($timeout) {
+  return {
+     scope : {
+       trigger : '@focus'
+     },
+     link : function(scope, element) {
+        scope.$watch('trigger', function(value) {
+          if (value === "true") {
+            $timeout(function() {
+              element[0].focus();
+            });
+          }
+       });
+     }
+   }
+});
+
 app.run(['$rootScope', '$location', '$http',
   function($rootScope, $location, $http) {
 
@@ -29,7 +46,7 @@ app.run(['$rootScope', '$location', '$http',
       var pattern = /.*access_token=(.*?)\&/i
       var accessTokenMatcher = pattern.exec(currentPath);
       console.log(accessTokenMatcher)
-      if (accessTokenMatcher.length > 0) {  // it matches
+      if (accessTokenMatcher != null && accessTokenMatcher.length > 0) {  // it matches
           var accessToken = accessTokenMatcher[1];
       }
 

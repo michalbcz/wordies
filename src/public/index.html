@@ -8,6 +8,7 @@
     <script src="/controllers/LoginController.js"></script>
     <script src="/controllers/TranslateController.js"></script>
     <script src="/controllers/HeaderController.js"></script>
+    <link href="/styles/index.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body ng-app>
@@ -15,9 +16,13 @@
     <div id="content">
 
         <div id="header" ng-controller="HeaderController">
+            <img id="userPicture" ng-src="{{imageUrl}}" />
             <div>Username: {{username}}</div>
             <div>Id: {{userId}}</div>
             <div>Access Token: {{(accessToken) || "n/a"}}</div>
+            <div id="loginView" ng-controller="LoginController">
+                <a href="https://accounts.google.com/o/oauth2/v2/auth?response_type=token&client_id=130606690212-uv64123b4ebsb7ck3dcqtstt6urvnejp.apps.googleusercontent.com&scope=profile&prompt=consent&redirect_uri=http://buznibuzna.com:8080">Login with Google !</a>
+            </div>
         </div>
 
         <div ng-view>content here</div>
