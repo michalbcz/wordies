@@ -1,6 +1,7 @@
 app.controller("HeaderController", ['$scope', '$rootScope', '$http', function($scope, $rootScope, $http) {
         $scope.username = "n/a"
 
+        // todo: tohle by asi melo byt v servisni vrstve, ze?
         $scope.$on('loginSuccessful', function(event, data) {
 
            $http({
@@ -14,7 +15,7 @@ app.controller("HeaderController", ['$scope', '$rootScope', '$http', function($s
                  var username = data.name;
                  var imageUrl = data.picture;
                  $scope.username = username;
-                 $scope.userId = userId;
+                 $rootScope.userId = userId;
                  $scope.imageUrl = imageUrl;
              }, function error(response) {
                  console.error("error!", response);

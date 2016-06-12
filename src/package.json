@@ -1,0 +1,24 @@
+{
+  "name": "wordies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "mongodb": "^2.1.21"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michalbcz/wordies.git"
+  },
+  "author": "Michal Bernhard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michalbcz/wordies/issues"
+  },
+  "homepage": "https://github.com/michalbcz/wordies#readme"
+}

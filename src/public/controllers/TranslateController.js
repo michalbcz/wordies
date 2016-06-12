@@ -10,6 +10,7 @@ app.controller("TranslateController", ["$scope", "$http", "$log", function($scop
             //url: "http://private-4018a-slovicka.apiary-mock.com/translate",
             url: "/api/translate/" + word,
             data: {
+                "userId": $scope.userId,
                 "word": word,
                 "context" : {
                     "uri": "http://expressjs.com/api.html",

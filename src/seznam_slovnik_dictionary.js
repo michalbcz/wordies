@@ -1,5 +1,4 @@
 var SLOVICKA_CZ_EN_URL = 'http://slovnik.seznam.cz/en-cz/word/';
-
 var xray = require('x-ray');
 
 var _translate = function(arg, callbackFn) {
@@ -23,11 +22,9 @@ var _translate = function(arg, callbackFn) {
                 translation.from = arg.from;
                 translation.to = arg.to;
 
-                callbackFn(object);
+                callbackFn(translation);
             });
 
 };
 
-exports.translate = function(params, callbackFn) {
-    _translate(params, callbackFn);
-}
+exports.translate = _translate;
